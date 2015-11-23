@@ -1465,7 +1465,7 @@ def main():
             prin.interfaz_rect(ventana)
         elif (ocultar==77):
             prin.interfaz_rectv(ventana)
- #       print (x_mouse, y_mouse)
+        print (x_mouse, y_mouse)
         pygame.display.update()
                     
 if __name__ == '__main__':
