@@ -1,12 +1,12 @@
 #!/usr/bin/python
 import pygame
-import sys
+import sys,gtk
 import pygame.locals
 from pygame.constants import *
 from pygame.mixer import music
 from Cursor import CURSOR
 
-pygame.init()
+#pygame.init()
 x=1200
 y=900
 ocultar = 1
@@ -701,6 +701,7 @@ class interfaz():
         x_mouse, y_mouse = pygame.mouse.get_pos()
         if(x_mouse > 136 and x_mouse<= 600) and (y_mouse >314 and y_mouse < 383):
             ocultar =45
+            self.ladrar.play()
             
         elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
             ocultar =46
@@ -718,6 +719,7 @@ class interfaz():
         x_mouse, y_mouse = pygame.mouse.get_pos()
         if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
             ocultar =48
+            
             
     def interfaz_preg1_triang_malo1(self, superficie):
         
@@ -751,6 +753,7 @@ class interfaz():
         x_mouse, y_mouse = pygame.mouse.get_pos()
         if(x_mouse > 136 and x_mouse<= 600) and (y_mouse >314 and y_mouse < 383):
             ocultar =49
+            self.ladrar.play()
             
         elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
             ocultar =50
@@ -807,6 +810,7 @@ class interfaz():
         
         elif(x_mouse > 385 and x_mouse<= 825) and (y_mouse >420 and y_mouse < 483):
             ocultar =53
+            self.ladrar.play()
             
     def interfaz_preg3_triang_bien(self, superficie):
         
@@ -854,6 +858,7 @@ class interfaz():
             
         elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
             ocultar =57
+            self.ladrar.play()
         
         elif(x_mouse > 385 and x_mouse<= 825) and (y_mouse >420 and y_mouse < 483):
             ocultar =59
@@ -901,6 +906,7 @@ class interfaz():
         x_mouse, y_mouse = pygame.mouse.get_pos()
         if(x_mouse > 183 and x_mouse<= 455) and (y_mouse >318 and y_mouse < 503):
             ocultar =61
+            self.ladrar.play()
             
         elif(x_mouse > 614 and x_mouse<= 723) and (y_mouse >254 and y_mouse < 514):
             ocultar =62
@@ -1132,11 +1138,13 @@ def main():
     cursor = pygame.cursors.compile(CURSOR)
     pygame.mouse.set_cursor((32,32), (1,1), *cursor)
     
-    #pygame.mixer.music.load("sonido/inicio.ogg")
-    #pygame.mixer.music.play(10)
+    pygame.mixer.music.load("sonido/intro.ogg")
+    pygame.mixer.music.play(10)
     prin=interfaz()    
 
     while True:
+        while gtk.events_pending():
+            gtk.main_iteration()
         x_mouse, y_mouse = pygame.mouse.get_pos()
        
         for eventos in pygame.event.get():
