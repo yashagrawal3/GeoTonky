@@ -1,10 +1,11 @@
 #!/usr/bin/python
 import pygame
-import sys,gtk
+import sys
 import pygame.locals
 from pygame.constants import *
 from pygame.mixer import music
 from Cursor import CURSOR
+from gi.repository import Gtk
 
 #pygame.init()
 x=1200
@@ -17,7 +18,7 @@ class interfaz():
     def __init__(self):
         
         self.Portada = pygame.image.load("img/Portada.png")
-        self.menu = pygame.image.load("img/Menu.png")
+        self.menu = pygame.image.load("img/Menu.jpg")
         self.bienvenida = pygame.image.load("img/Bienvenida.png")
         self.ayuda = pygame.image.load("img/interfaz_Ayuda.png")
         self.ayuda_actividad = pygame.image.load("img/AYUDA_1.png")
@@ -94,12 +95,35 @@ class interfaz():
         self.cuadrav =pygame.image.load("img/cuadrado_vertice.png")
         self.rect =pygame.image.load("img/rectangulo.png")
         self.rectv =pygame.image.load("img/Regtangulo_vertice.png")
-    
+        self.rombo =pygame.image.load("img/Rombo_lado.png")
+        self.rombov =pygame.image.load("img/Rombo_vertice.png")
+        self.trapecio =pygame.image.load("img/Trapecio_lado.png")
+        self.trapeciov =pygame.image.load("img/Trapecio_vertice.png")
         
         
-        
-        
-        
+        self.preg1_rect = pygame.image.load("img/actividad1_rectangulo/actividad_cuadrado_1.png")
+        self.preg1_rectgbien = pygame.image.load("img/actividad1_rectangulo/actividad_cuadrado_Bien.png")
+        self.preg1_rectmalo1 = pygame.image.load("img/actividad1_rectangulo/actividad_cuadrado_malo_1.png")
+        self.preg1_rectmalo2 = pygame.image.load("img/actividad1_rectangulo/actividad_cuadrado_malo_2.png") 
+        self.preg2_rect = pygame.image.load("img/actividad2_rectangulo/actividad_cuadrado_1.png")
+        self.preg2_rectgbien = pygame.image.load("img/actividad2_rectangulo/actividad_cuadrado_bien.png")
+        self.preg2_rectmalo1 = pygame.image.load("img/actividad2_rectangulo/actividad_cuadrado_mal.png")
+        self.preg2_rectmalo2 = pygame.image.load("img/actividad2_rectangulo/actividad_cuadrado_mal_2.png")
+        self.preg3_rect = pygame.image.load("img/actividad3_rectangulo/actividad_cuadrado_3.png")
+        self.preg3_rectgbien = pygame.image.load("img/actividad3_rectangulo/actividad_cuadrado_Bien.png")
+        self.preg3_rectmalo1 = pygame.image.load("img/actividad3_rectangulo/actividad_cuadrado_mal.png")
+        self.preg3_rectmalo2 = pygame.image.load("img/actividad3_rectangulo/actividad_cuadrado_mal_2.png")
+        self.preg4_rect = pygame.image.load("img/actividad4_rectangulo/actividad_cuadrado_4.png")
+        self.preg4_rectgbien = pygame.image.load("img/actividad4_rectangulo/actividad_cuadrado_bien.png")
+        self.preg4_rectmalo1 = pygame.image.load("img/actividad4_rectangulo/actividad_cuadrado_malo.png")
+        self.preg5_rect = pygame.image.load("img/actividad5_rectangulo/actividad_cuadrado_5.png")
+        self.preg5_rectgbien = pygame.image.load("img/actividad5_rectangulo/actividad_cuadrado_bien.png")
+        self.preg5_rectmalo1 = pygame.image.load("img/actividad5_rectangulo/actividad_cuadrado_malo_1.png")
+        self.preg5_rectmalo2 = pygame.image.load("img/actividad5_rectangulo/actividad_cuadrado_malo_2.png")
+        self.preg6_rect = pygame.image.load("img/actividad6_rectangulo/actividad_cuadrado_6.png")
+        self.preg6_rectgbien = pygame.image.load("img/actividad6_rectangulo/actividad_cuadrado_bien.png")
+        self.preg6_rectmalo1 = pygame.image.load("img/actividad6_rectangulo/actividad_cuadrado_malo_1.png")
+        self.preg6_rectmalo2 = pygame.image.load("img/actividad6_rectangulo/actividad_cuadrado_malo_2.png")
         
         self.ladrar = pygame.mixer.Sound("sonido/ladrar.ogg")
         
@@ -703,7 +727,7 @@ class interfaz():
             ocultar =45
             self.ladrar.play()
             
-        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
+        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 378):
             ocultar =46
         
         elif(x_mouse > 385 and x_mouse<= 825) and (y_mouse >420 and y_mouse < 483):
@@ -755,7 +779,7 @@ class interfaz():
             ocultar =49
             self.ladrar.play()
             
-        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
+        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 378):
             ocultar =50
         
         elif(x_mouse > 385 and x_mouse<= 825) and (y_mouse >420 and y_mouse < 483):
@@ -805,7 +829,7 @@ class interfaz():
         if(x_mouse > 136 and x_mouse<= 600) and (y_mouse >314 and y_mouse < 383):
             ocultar =54
             
-        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
+        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 378):
             ocultar =55
         
         elif(x_mouse > 385 and x_mouse<= 825) and (y_mouse >420 and y_mouse < 483):
@@ -856,7 +880,7 @@ class interfaz():
         if(x_mouse > 136 and x_mouse<= 600) and (y_mouse >314 and y_mouse < 383):
             ocultar =58
             
-        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 882):
+        elif(x_mouse > 647 and x_mouse<= 1115) and (y_mouse >315 and y_mouse < 378):
             ocultar =57
             self.ladrar.play()
         
@@ -1056,7 +1080,7 @@ class interfaz():
     def poscision_elementos_pregfin_triang(self, superficie):
         global ocultar
         x_mouse, y_mouse = pygame.mouse.get_pos()
-        if(x_mouse > 32 and x_mouse<= 330) and (y_mouse >822and y_mouse < 878):
+        if(x_mouse > 32 and x_mouse<= 330) and (y_mouse > 822 and y_mouse < 878):
             ocultar =2
             
     def interfaz_cuadra(self, superficie):
@@ -1127,7 +1151,368 @@ class interfaz():
             ocultar =76
             
         elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
-            ocultar =75
+            ocultar =78
+            
+    def interfaz_rombo(self, superficie):
+        
+        superficie.blit(self.rombo, (0,0))
+    
+    def poscision_elementos_rombo(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 49 and x_mouse<= 341) and (y_mouse >26 and y_mouse < 79):
+            ocultar =77
+            
+        elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
+            ocultar =79
+    
+    def interfaz_rombov(self, superficie):
+        
+        superficie.blit(self.rombov, (0,0))
+    
+    def poscision_elementos_rombov(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 49 and x_mouse<= 341) and (y_mouse >26 and y_mouse < 79):
+            ocultar =78
+            
+        elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
+            ocultar =80
+            
+    def interfaz_trapecio(self, superficie):
+        
+        superficie.blit(self.trapecio, (0,0))
+    
+    def poscision_elementos_trapecio(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 49 and x_mouse<= 341) and (y_mouse >26 and y_mouse < 79):
+            ocultar =79
+            
+        elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
+            ocultar =81
+    
+    def interfaz_trapeciov(self, superficie):
+        
+        superficie.blit(self.trapeciov, (0,0))
+    
+    def poscision_elementos_trapeciov(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 49 and x_mouse<= 341) and (y_mouse >26 and y_mouse < 79):
+            ocultar =80
+            
+        elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
+            ocultar =82
+            
+    def interfaz_reclobienve(self, superficie):
+        
+        superficie.blit(self.triangbien, (0,0))
+        
+        
+    def poscision_elementos_recbienve(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 49 and x_mouse<= 341) and (y_mouse >26 and y_mouse < 79):
+            ocultar =81
+            
+        elif(x_mouse > 79 and x_mouse<= 379) and (y_mouse >815 and y_mouse < 870):
+            ocultar =83
+    
+    def interfaz_preg1_rect(self, superficie):
+        
+        superficie.blit(self.preg1_rect, (0,0))
+        
+        
+    def poscision_elementos_preg1_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 136 and x_mouse<= 603) and (y_mouse >316 and y_mouse < 383):
+            ocultar =85
+            
+        elif(x_mouse > 410 and x_mouse<= 871) and (y_mouse >431 and y_mouse < 501):
+            ocultar =84
+            self.ladrar.play()
+        elif(x_mouse > 646 and x_mouse<= 1113) and (y_mouse >319 and y_mouse < 384):
+            ocultar =86
+    
+    def interfaz_preg1_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg1_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg1_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =87
+            
+    def interfaz_preg1_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg1_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg1_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =83
+            
+    def interfaz_preg1_rect_malo2(self, superficie):
+        
+        superficie.blit(self.preg1_rectmalo2, (0,0))
+        
+        
+    def poscision_elementos_preg1_rect_malo2(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =83
+            
+    def interfaz_preg2_rect(self, superficie):
+        
+        superficie.blit(self.preg2_rect, (0,0))
+        
+        
+    def poscision_elementos_preg2_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 136 and x_mouse<= 603) and (y_mouse >316 and y_mouse < 383):
+            ocultar =88
+            self.ladrar.play()
+        elif(x_mouse > 410 and x_mouse<= 871) and (y_mouse >431 and y_mouse < 501):
+            ocultar =89
+            
+        elif(x_mouse > 646 and x_mouse<= 1113) and (y_mouse >319 and y_mouse < 384):
+            ocultar =90
+    
+    def interfaz_preg2_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg2_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg2_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =91
+            
+    def interfaz_preg2_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg2_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg2_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =87
+            
+    def interfaz_preg2_rect_malo2(self, superficie):
+        
+        superficie.blit(self.preg2_rectmalo2, (0,0))
+        
+        
+    def poscision_elementos_preg2_rect_malo2(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =87
+            
+    def interfaz_preg3_rect(self, superficie):
+        
+        superficie.blit(self.preg3_rect, (0,0))
+        
+        
+    def poscision_elementos_preg3_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 136 and x_mouse<= 603) and (y_mouse >316 and y_mouse < 383):
+            ocultar =92
+            self.ladrar.play()
+        elif(x_mouse > 410 and x_mouse<= 871) and (y_mouse >431 and y_mouse < 501):
+            ocultar =93
+            
+        elif(x_mouse > 646 and x_mouse<= 1113) and (y_mouse >319 and y_mouse < 384):
+            ocultar =94
+    
+    def interfaz_preg3_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg3_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg3_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =95
+            
+    def interfaz_preg3_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg3_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg3_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =91
+            
+    def interfaz_preg3_rect_malo2(self, superficie):
+        
+        superficie.blit(self.preg3_rectmalo2, (0,0))
+        
+        
+    def poscision_elementos_preg3_rect_malo2(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =91
+            
+    def interfaz_preg4_rect(self, superficie):
+        
+        superficie.blit(self.preg4_rect, (0,0))
+        
+        
+    def poscision_elementos_preg4_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 129 and x_mouse<= 603) and (y_mouse >300 and y_mouse < 490):
+            ocultar =96
+            self.ladrar.play()
+        elif(x_mouse > 647 and x_mouse<= 1128) and (y_mouse >303 and y_mouse < 488):
+            ocultar =97
+            
+    def interfaz_preg4_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg4_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg4_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =98
+    
+    def interfaz_preg4_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg4_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg4_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =95
+            
+    def interfaz_preg5_rect(self, superficie):
+        
+        superficie.blit(self.preg5_rect, (0,0))
+        
+        
+    def poscision_elementos_preg5_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 136 and x_mouse<= 603) and (y_mouse >316 and y_mouse < 383):
+            ocultar =99
+            self.ladrar.play()
+        elif(x_mouse > 410 and x_mouse<= 871) and (y_mouse >431 and y_mouse < 501):
+            ocultar =100
+            
+        elif(x_mouse > 646 and x_mouse<= 1113) and (y_mouse >319 and y_mouse < 384):
+            ocultar =101
+    
+    def interfaz_preg5_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg5_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg5_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =102
+    
+    def interfaz_preg5_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg5_rectmalo2, (0,0))
+        
+        
+    def poscision_elementos_preg5_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =98
+            
+    def interfaz_preg5_rect_malo2(self, superficie):
+        
+        superficie.blit(self.preg5_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg5_rect_malo2(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =98
+            
+    def interfaz_preg6_rect(self, superficie):
+        
+        superficie.blit(self.preg6_rect, (0,0))
+        
+        
+    def poscision_elementos_preg6_rect(self, superficie):
+        global ocultar
+        
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 136 and x_mouse<= 603) and (y_mouse >316 and y_mouse < 383):
+            ocultar = 104
+            
+        elif(x_mouse > 410 and x_mouse<= 871) and (y_mouse >431 and y_mouse < 501):
+            ocultar =103
+            self.ladrar.play()
+            
+        elif(x_mouse > 646 and x_mouse<= 1113) and (y_mouse >319 and y_mouse < 384):
+            ocultar =105
+            
+    def interfaz_preg6_rect_bien(self, superficie):
+        
+        superficie.blit(self.preg6_rectgbien, (0,0))
+        
+        
+    def poscision_elementos_preg6_rect_bien(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 467 and x_mouse<= 762) and (y_mouse >800 and y_mouse < 859):
+            ocultar =72
+    
+    def interfaz_preg6_rect_malo1(self, superficie):
+        
+        superficie.blit(self.preg6_rectmalo1, (0,0))
+        
+        
+    def poscision_elementos_preg6_rect_malo1(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =102
+            
+    def interfaz_preg6_rect_malo2(self, superficie):
+        
+        superficie.blit(self.preg6_rectmalo2, (0,0))
+        
+        
+    def poscision_elementos_preg6_rect_malo2(self, superficie):
+        global ocultar
+        x_mouse, y_mouse = pygame.mouse.get_pos()
+        if(x_mouse > 551 and x_mouse<= 650) and (y_mouse >800 and y_mouse < 888):
+            ocultar =102
+    
+    
             
             
 def main():
@@ -1143,8 +1528,8 @@ def main():
     prin=interfaz()    
 
     while True:
-        while gtk.events_pending():
-            gtk.main_iteration()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
         x_mouse, y_mouse = pygame.mouse.get_pos()
        
         for eventos in pygame.event.get():
@@ -1310,7 +1695,63 @@ def main():
                 elif(ocultar==76):
                     prin.poscision_elementos_rect(ventana)
                 elif(ocultar==77):
-                    prin.poscision_elementos_rectv(ventana)          
+                    prin.poscision_elementos_rectv(ventana)
+                elif(ocultar==78):
+                    prin.poscision_elementos_rombo(ventana)
+                elif(ocultar==79):
+                    prin.poscision_elementos_rombov(ventana)
+                elif(ocultar==80):
+                    prin.poscision_elementos_trapecio(ventana)
+                elif(ocultar==81):
+                    prin.poscision_elementos_trapeciov(ventana)
+                elif(ocultar==82):
+                    prin.poscision_elementos_recbienve(ventana)
+                elif(ocultar==83):
+                    prin.poscision_elementos_preg1_rect(ventana)
+                elif(ocultar==84):
+                    prin.poscision_elementos_preg1_rect_bien(ventana)
+                elif(ocultar==85):
+                    prin.poscision_elementos_preg1_rect_malo1(ventana)
+                elif(ocultar==86):
+                    prin.poscision_elementos_preg1_rect_malo2(ventana)
+                elif(ocultar==87):
+                    prin.poscision_elementos_preg2_rect(ventana)
+                elif(ocultar==88):
+                    prin.poscision_elementos_preg2_rect_bien(ventana)
+                elif(ocultar==89):
+                    prin.poscision_elementos_preg2_rect_malo1(ventana)
+                elif(ocultar==90):
+                    prin.poscision_elementos_preg2_rect_malo2(ventana)
+                elif(ocultar==91):
+                    prin.poscision_elementos_preg3_rect(ventana)
+                elif(ocultar==92):
+                    prin.poscision_elementos_preg3_rect_bien(ventana)
+                elif(ocultar==93):
+                    prin.poscision_elementos_preg3_rect_malo1(ventana)
+                elif(ocultar==94):
+                    prin.poscision_elementos_preg3_rect_malo2(ventana)
+                elif(ocultar==95):
+                    prin.poscision_elementos_preg4_rect(ventana) 
+                elif(ocultar==96):
+                    prin.poscision_elementos_preg4_rect_bien(ventana) 
+                elif(ocultar==97):
+                    prin.poscision_elementos_preg4_rect_malo1(ventana)
+                elif(ocultar==98):
+                    prin.poscision_elementos_preg5_rect(ventana)
+                elif(ocultar==99):
+                    prin.poscision_elementos_preg5_rect_bien(ventana)
+                elif(ocultar==100):
+                    prin.poscision_elementos_preg5_rect_malo1(ventana)
+                elif(ocultar==101):
+                    prin.poscision_elementos_preg5_rect_malo2(ventana)
+                elif(ocultar==102):
+                    prin.poscision_elementos_preg6_rect(ventana) 
+                elif(ocultar==103):
+                    prin.poscision_elementos_preg6_rect_bien(ventana)
+                elif(ocultar==104):
+                    prin.poscision_elementos_preg6_rect_malo1(ventana)
+                elif(ocultar==105):
+                    prin.poscision_elementos_preg6_rect_malo2(ventana) 
             elif eventos.type == KEYDOWN:
                 
                 if eventos.key == K_ESCAPE:
@@ -1473,7 +1914,62 @@ def main():
             prin.interfaz_rect(ventana)
         elif (ocultar==77):
             prin.interfaz_rectv(ventana)
-        print (x_mouse, y_mouse)
+        elif (ocultar==78):
+            prin.interfaz_rombo(ventana)
+        elif (ocultar==79):
+            prin.interfaz_rombov(ventana)
+        elif (ocultar==80):
+            prin.interfaz_trapecio(ventana)
+        elif (ocultar==81):
+            prin.interfaz_trapeciov(ventana)
+        elif (ocultar==82):
+            prin.interfaz_reclobienve(ventana)
+        elif (ocultar==83):
+            prin.interfaz_preg1_rect(ventana)
+        elif (ocultar==84):
+            prin.interfaz_preg1_rect_bien(ventana)
+        elif (ocultar==85):
+            prin.interfaz_preg1_rect_malo1(ventana)
+        elif (ocultar==86):
+            prin.interfaz_preg1_rect_malo2(ventana)
+        elif (ocultar==87):
+            prin.interfaz_preg2_rect(ventana)
+        elif (ocultar==88):
+            prin.interfaz_preg2_rect_bien(ventana)
+        elif (ocultar==89):
+            prin.interfaz_preg2_rect_malo1(ventana)
+        elif (ocultar==90):
+            prin.interfaz_preg2_rect_malo2(ventana)
+        elif (ocultar==91):
+            prin.interfaz_preg3_rect(ventana)
+        elif (ocultar==92):
+            prin.interfaz_preg3_rect_bien(ventana)
+        elif (ocultar==93):
+            prin.interfaz_preg3_rect_malo1(ventana)
+        elif (ocultar==94):
+            prin.interfaz_preg3_rect_malo2(ventana)
+        elif (ocultar==95):
+            prin.interfaz_preg4_rect(ventana)
+        elif (ocultar==96):
+            prin.interfaz_preg4_rect_bien(ventana)
+        elif (ocultar==97):
+            prin.interfaz_preg4_rect_malo1(ventana)
+        elif (ocultar==98):
+            prin.interfaz_preg5_rect(ventana)
+        elif (ocultar==99):
+            prin.interfaz_preg5_rect_bien(ventana)
+        elif (ocultar==100):
+            prin.interfaz_preg5_rect_malo1(ventana)
+        elif (ocultar==101):
+            prin.interfaz_preg5_rect_malo2(ventana)
+        elif (ocultar==102):
+            prin.interfaz_preg6_rect(ventana)
+        elif (ocultar==103):
+            prin.interfaz_preg6_rect_bien(ventana)
+        elif (ocultar==104):
+            prin.interfaz_preg6_rect_malo1(ventana)
+        elif (ocultar==105):
+            prin.interfaz_preg6_rect_malo2(ventana)
         pygame.display.update()
                     
 if __name__ == '__main__':
